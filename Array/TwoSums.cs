@@ -2,7 +2,7 @@
 
 // Given an array of integers nums and an integer target,
 // return indices of the two numbers such that they add up to target.
-public class TwoSums
+public static class TwoSums
 {
     private static readonly int[] testCase1 = [2,7,11,15];
     private static readonly int target1 = 9;
@@ -13,9 +13,32 @@ public class TwoSums
     private static readonly int[] testCase3 = [3,3];
     private static readonly int target3 = 6;
     
-    public static int[] BruteForce(int[] nums, int target)
+    public static Dictionary<string, int[]> RunBruteForce()
     {
-        return [];
+        int[] answer1 = BruteForce(testCase1, target1);
+        int[] answer2 = BruteForce(testCase2, target2);
+        int[] answer3 = BruteForce(testCase3, target3);
+
+        return new Dictionary<string, int[]>()
+        {
+            { "Test case 1", answer1 },
+            { "Test case 2", answer2 },
+            { "Test case 3", answer3 },
+        };
+    }
+    
+    private static int[] BruteForce(int[] nums, int target)
+    {
+        for(int i = 0; i < nums.Length; i++)
+        {
+            for (int j = i + 1; j < nums.Length; j++)
+            {
+                if(nums[i] + nums[j] == target)
+                    return new int[2] { i, j };
+            }
+        }
+        
+        throw new Exception("No solution found");
     }
 
     public static Dictionary<string, int[]> RunOptimized()

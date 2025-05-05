@@ -14,3 +14,14 @@ foreach (var item in result)
     }
     Console.WriteLine($"{res}");
 }
+
+var bruteForceResult = TwoSums.RunBruteForce();
+foreach (var item in bruteForceResult)
+{
+    string res = $"{item.Key} - Values = ";
+    foreach (int value in item.Value)
+    {
+        res += $"{value},";       
+    }
+    Console.WriteLine($"{res}");
+}
