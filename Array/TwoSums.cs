@@ -2,6 +2,10 @@
 
 // Given an array of integers nums and an integer target,
 // return indices of the two numbers such that they add up to target.
+// Easy...
+
+// skip dynammic programming...
+// solve top 50 questions bloomberg...
 public static class TwoSums
 {
     private static readonly int[] testCase1 = [2,7,11,15];

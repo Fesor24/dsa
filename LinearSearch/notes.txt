@@ -1,0 +1,24 @@
+﻿Iterates from the first item to the last
+If item exists, it returns the index
+Otherwise it returns -1
+
+Simplest search algorithm
+It checks every element of the array one by one until the desired element is found or the end of the array is reached
+
+How it works:
+- Start from the first element of the array
+- Compare each element to the target value
+- If a match is found, return the index
+- if the loop ends and no match is found, return -1
+
+Time complexity
+Best case - O(1)
+Worst case - O(n)
+Average case - O(n)
+
+Space complexity
+O(1): no extra space needed..no new data structures (arrays, list etc) are created.
+We use a constant amount of extra memory, no matter how big the input array is
+If we created an array or list to store the result, that would be O(n) space
+
+Not ideal for large datasets

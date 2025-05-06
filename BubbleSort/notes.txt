@@ -1,0 +1,13 @@
+﻿Almost never used bcos of performance
+Bad algorithm
+In-place algorithm: uses a small amount of memory (doesn't depend on n)
+Amount of space needed to solve the problem will not depend on the input size
+O(n2) time complexity (quadratic)
+
+Illustration
+Given an array [1,4,7,9,2,0]
+First iteration [1,4,7,2,0,9]
+Second [1,4,2,0,7,9]
+Third [1,2,0,4,7,9]
+Fourth [1,0,2,4,7,9]
+Fifth [0,1,2,4,7,9]

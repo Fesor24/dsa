@@ -1,0 +1,3 @@
+The prefix sum pattern is used in the following cases:
+- Range sum queries: where we need to compute the sum of two elements frequently
+- Sub array problems: where we need to count the number of sub arrays that add up to a specific value
