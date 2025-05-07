@@ -1,0 +1,2 @@
+﻿Traversal
+ Basically iterations over the items of an array

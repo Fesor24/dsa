@@ -1,38 +1,28 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-using Array;
-using Array.PrefixSumPattern;
+using static System.Console;
 
-Console.WriteLine("Arrays!!!");
+WriteLine("Arrays!!!");
 
 int[] myArr = {1,2,3,4};
 
-var result = PrefixSum.SimpleImpl(myArr);
+int[] myArr2 = new int[5];
+myArr2[0] = 1;
+myArr2[1] = 2;
+myArr2[2] = 3;
+myArr2[3] = 4;
 
-foreach(int item in result)
-    Console.WriteLine(item);
+// insert number 5 at index 2
+int index = 2;
+for(int i = myArr2.Length - 1; i > index; i--)
+{
+    myArr2[i] = myArr2[i - 1];
+}
 
-Console.ReadLine();
+myArr2[index] = 5;
 
-// Two sums
-// var result = TwoSums.RunOptimized();
-// foreach (var item in result)
-// {
-//     string res = $"{item.Key} - Values = ";
-//     foreach (int value in item.Value)
-//     {
-//         res += $"{value},";       
-//     }
-//     Console.WriteLine($"{res}");
-// }
+foreach(int item in myArr2)
+    Write(item);
 
-// var bruteForceResult = TwoSums.RunBruteForce();
-// foreach (var item in bruteForceResult)
-// {
-//     string res = $"{item.Key} - Values = ";
-//     foreach (int value in item.Value)
-//     {
-//         res += $"{value},";       
-//     }
-//     Console.WriteLine($"{res}");
-// }
+
+ReadLine();
