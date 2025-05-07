@@ -1,0 +1,17 @@
+﻿Super-efficient way to find an element in a sorted array
+Rather than checking every item one by one (Linear search), it cuts the search space in half each time.
+Efficient for large dataset - perfect for large arrays when sorting is already done
+
+
+Time complexity
+Best case: O(1) - target is at the middle
+Worst and average case: O(log n) - Each step cuts the search space in half, which is way faster than checking
+each one (O(n))
+
+Space complexity
+Iterative version: O(1)
+No extra space used; just a few variables (left, right, mid)
+
+Recursive version: O(log n)
+Due to function call stack
+
