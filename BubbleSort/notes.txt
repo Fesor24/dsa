@@ -1,8 +1,16 @@
 ﻿Almost never used bcos of performance
-Bad algorithm
+Inefficient algorithm
+Rarely used in the real world
 In-place algorithm: uses a small amount of memory (doesn't depend on n)
-Amount of space needed to solve the problem will not depend on the input size
-O(n2) time complexity (quadratic)
+The highest value will bubble to the right with each iteration
+
+Time complexity
+Best case O(n) => where the array is sorted and we optimize it by checking for swaps
+Best case without optimization O(n2)
+Worst case O(n2) (quadratic) => The outer loop is executed n - 1 times and the inner loop executed n - 1 times
+
+Space complexity
+O(1) => Bubble sort is in place, meaning it does not use extra space beyond the original array
 
 Illustration
 Given an array [1,4,7,9,2,0]
