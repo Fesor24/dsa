@@ -1,0 +1,69 @@
+﻿Simply
+1. Outer loop representing each pass (which is no of elements - 1)
+2. Inner loop with Linear search to get the minimum element
+3. If min is not value of i in outer loop, we swap...
+
+Time complexity
+Worst case O(n2)
+Best case O(n2)
+
+How Bubble sort differs
+Bubble - Repeated swapping and then bubbles at the end
+Selection - Selection and swapping - gets the min and then swaps with it with the first unsorted element
+
+Bubble - No of swaps is high- potentially many swaps per pass
+Selection - Only one swap per pass
+
+Bubble - Best case (O(n2)), item already sorted; Worst case (O(n2))
+Selection - Best/Average/Worst Case (O(n2))
+
+int[] BubbleSort(int[] myArr)
+{
+    for(int i = 0; i < myArr.Length - 1; i++)
+    {
+        bool swapped = false;
+    
+        for(int j = 0; j < myArr.Length - 1 - i; j++)
+        {
+            if(myArr[j] > myArr[j + 1])
+            {
+                int temp = myArr[j];
+                myArr[j] = myArr[j + 1];
+                myArr[j + 1] = temp;
+                
+                swapped = true; 
+            }
+        }
+        
+        if(!swapped) break;
+    }
+    
+    return myArr;
+}
+
+int[] SelectionSort(int[] myArr)
+{
+    for(int i = 0; i < myArr.Length - 1; i++)
+    {
+        int min = i;
+        
+        for(int j = i + 1; j < myArr.Length; j++)
+        {
+            if(myArr[min] > myArr[j])
+            {
+                min = j;
+            }
+        }
+        
+        if(min != i)
+        {
+            int temp = myArr[i];
+            myArr[i] = myArr[min];
+            myArr[min] = temp;
+        }
+    }
+    
+    return myArr;
+
+}
+

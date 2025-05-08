@@ -1,0 +1,43 @@
+﻿The array is divided into two parts, one sorted and the other unsorted
+Firstly, we get the minimum element
+When we get it, we swap it with the element at the starting position
+
+Given an array [7,4,6,1,9,0]
+We do the linear search, then we get the minimum which is 0 here, we then swap it to the element at the beginning
+We then have [0,4,6,1,9,7], this is our first pass
+Here the sorted subarray is [0], while the unsorted part is everything after 0
+
+Like BubbleSort, if we have 6 elements, we sort 5 elements and this leaves the last one in the right position
+So number of passes is (number of elements - 1)
+
+Two loops
+The first is for the outer passes
+The second is to find the minimum element from the unsorted array and then swapping
+
+Simply
+1. Outer loop representing each pass (which is no of elements - 1)
+2. Inner loop with Linear search to get the minimum element
+3. If min is not value of i in outer loop, we swap...
+
+
+for(int i = 0; i < myArr.Length - 1; i++)
+{
+    int min = i;
+    
+    // Linear search to get the minimum element...
+    for(int j = 1 + i; j < myArr.Length; j++)
+    {
+        if(arr[min] > arr[j])
+            min = j;
+    }
+    
+    if(min != i)
+        Swap(myArr, min, i);
+}
+
+void Swap(int[] arr, int a, int b)
+{
+    int temp = arr[a];
+    arr[a] = arr[b];
+    arr[b] = temp;
+}

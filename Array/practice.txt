@@ -1,0 +1,56 @@
+﻿// Linear search
+
+int LinearSearch(int[] myArr, int searchValue)
+{
+    for(int i = o; i < myArr.Length; i++)
+    {
+        if(myArr[i] == searchValue)
+            return i;
+    }
+    
+    return -1;
+}
+
+int BinarySearch(int[] myArr, int searchValue)
+{
+    int left = 0;
+    int right = myArr.Length - 1;
+    
+    int mid = (left + right) / 2;
+    
+    while(left <= right)
+    {
+        if(myArr[mid] == searchValue)
+            return mid;
+            
+        else if(searchValue > myArr[mid])
+            left = mid + 1;
+            
+        else
+            right = mid - 1;
+    }
+    
+    return -1;
+}
+
+int[] BubbleSort(int[] myArr)
+{
+    for(int i = 0; i < myArr.Length - 1; i++)
+    {
+        bool swapped = false;
+    
+        for(int j = 0; j < myArr.Length - 1 - i; j++)
+        {
+            if(myArr[j] > myArr[j + 1])
+            {
+                int temp = myArr[j];
+                myArr[j] = myArr[j + 1];
+                myArr[j + 1] = temp;
+                
+                swapped = true;
+            }
+        }
+        
+        if(!swapped) break;
+    }
+}

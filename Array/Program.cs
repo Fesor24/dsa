@@ -21,8 +21,13 @@ for(int i = myArr2.Length - 1; i > index; i--)
 
 myArr2[index] = 5;
 
-foreach(int item in myArr2)
-    Write(item);
+//foreach(int item in myArr2)
+//    Write(item);
+
+
+
+
+
 
 
 ReadLine();

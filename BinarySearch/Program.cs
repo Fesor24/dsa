@@ -20,10 +20,12 @@ int BinarySearch(int[] arr, int target)
 {
     int left = 0;
     int right = arr.Length - 1;
+
+    int mid;
         
     while(left <= right)
     {
-        int mid = (left + right) / 2;
+        mid = (left + right) / 2;
         
         if(arr[mid] == target)
             return mid;
