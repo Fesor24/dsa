@@ -1,0 +1,15 @@
+﻿Linear data structure
+It is of dynamic size
+Data can be inserted/deleted at any place
+Insertion and deletion is easier than array
+Accessing element O(n) while for array as we know is o(1)
+
+Solves the drawback of array, which could lead to wastage of memory since arrays are of fixed size
+With linked list, we do need to specify number of elements
+
+A drawback, can be argued against Linked List is the allocation of storage for the pointer to the next node
+
+
+
+Linked list is a collection of elements. 
+Difference between it and array is that data is not stored in contiguous location

@@ -1,0 +1,10 @@
+﻿A variation of singly linked list
+The difference btw it and singly linked list is that while in the former, the last node stores the 
+address of the head node, in the latter, it doesn't.
+
+Doubly Circular Linked List
+A variation of doubly linked list
+* The next pointer of the last node points to the head node
+* The head node also has a pointer to the last node
+
+

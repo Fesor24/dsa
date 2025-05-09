@@ -1,0 +1,1 @@
+﻿Each node has a data part and 2 address part (pointers to previous and next node)

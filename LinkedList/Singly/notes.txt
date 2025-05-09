@@ -1,0 +1,14 @@
+﻿In singly linked list, each node contains two part:
+1. Data part
+2. Address part - The address of the next node
+
+The address of the first node is stored in a pointer called the 'Head'. 
+This is not the head node as it only stores the pointer for the head node.
+
+It has only a single link, hence the name 'singly linked list'
+Just a single link...
+2|200 => 5|400 => 7|null
+
+The list can not be traversed in the reverse direction
+Only forward sequential movement is possible
+ 

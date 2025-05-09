@@ -1,0 +1,23 @@
+﻿
+
+int [] myArr = new int[5];
+myArr[0] = 3;
+myArr[1] = 5;
+myArr[2] = 6;
+myArr[3] = 7;
+
+// Insert 4 at index 2
+for(int i = myArr.Length - 1; i > index; i--)
+{
+    myArr[i] = myArr[i - 1];
+}
+
+myArr[index] = 4;
+
+// Insert at appropriate position
+int value = 4;
+for(int i = myArr.Length - 1 - 1; i >= 0; i--)
+{
+    if(myArr[i] > value)
+        myArr[i + 1] = myArr[i];
+}
