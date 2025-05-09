@@ -1,0 +1,5 @@
+
+
+Time complexity
+Best case: O(n) where the array is already in ascending order
+Worst case: O(n2)

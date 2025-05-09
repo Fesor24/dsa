@@ -1,0 +1,33 @@
+﻿The array is divided in 2 parts; sorted sublist, unsorted sublist
+We take one variable from the unsorted sublist and insert in the sorted sublist
+
+Simply
+First we pick an item from the unsorted sublist
+Second we find the appropriate place for it in the sorted sublist
+
+The first variable is considered as the sorted sublist and from index 1 to end, it is considered as unsorted
+
+Two loops:
+The first one from the unsorted sublist to end (The outer loop)
+[0,9,4,2,7] i.e from index 1(value 9) to end
+
+The second decremented...from the last item in the sorted sublist
+
+
+// The outer loop...the unsorted sublist
+// myArr[0] is considered the sorted sublist
+// [9,2,9,0]
+for(int i = 1; i < myArr.Length; i++)
+{
+    int temp = myArr[i]; // temp is 2
+    int j = i - 1; // j is 0
+    
+    while(j >= 0 && myArr[j] > temp) 9 > 2
+    {
+        myArr[j + 1] = myArr[j];
+        j--
+    }
+    
+    myArr[j] = temp;
+}
+
