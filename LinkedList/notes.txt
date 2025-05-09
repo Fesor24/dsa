@@ -9,7 +9,32 @@ With linked list, we do need to specify number of elements
 
 A drawback, can be argued against Linked List is the allocation of storage for the pointer to the next node
 
-
-
 Linked list is a collection of elements. 
 Difference between it and array is that data is not stored in contiguous location
+
+Arrays v. LinkedList
+1. Accessing elements
+- For arrays, it is a constant time
+- For linked list, accessing an element depends on the number of nodes, O(n)
+
+2. Memory utilization
+- For arrays, it could be ineffective, say we initialize an array with size of 20 (80bytes [20 * 4])and then we have 5 elements (20 bytes)
+- For linked list, the size is dynamic, if we want to store 3 elements, we create 3 nodes. Storage - 4 bytes for data and 4 for the pointer so 24bytes
+  Linked list does take more memory though, compared to arrays as the items get larger.
+- Memory requirement is less in arrays compared to linked list but memory utilization is efficient in linked list, bcos arrays could be allocated more memory than the elements it holds
+- Note that memory requirement and utilization are different things
+
+3. Insertion/Deletion
+- At the beginning, for arrays, since we have to shift existing items, it is O(n), for linked list, it is O(1)
+- At the end, for arrays it is O(1), for linked list, we have to traverse to get to the end so it is O(n) 
+- At n position, for arrays it si O(n), for linked list, it is O(n)
+
+4. Ease of use
+- Arrays are relatively easier
+
+5. Search operarions
+- For arrays, linear and binary search are possible
+- For linked list, only linked list is possible
+
+
+ 
