@@ -1,0 +1,3 @@
+﻿A function calling itself
+
+An important thing about recursion is that there must be a base condition that will terminate it.

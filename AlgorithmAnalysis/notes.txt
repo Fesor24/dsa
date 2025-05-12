@@ -1,0 +1,3 @@
+Abstract data type => This is the representation of data and the operations that can be done on it.
+The encapsulation of these, say in a class is referred to as the Abstract Data Type.
+
