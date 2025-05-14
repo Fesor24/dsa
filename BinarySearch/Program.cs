@@ -26,22 +26,24 @@ int BinarySearch(int[] arr, int target)
     while(left <= right)
     {
         mid = (left + right) / 2;
-        
-        if(arr[mid] == target)
+
+        if (arr[mid] == target)
             return mid;
-            
-        // if value at mid is less than target, we focus on the right half
-        else if (arr[mid] < target)
-            left = mid + 1;
         
-        // else we focus on the left half
-        else if (arr[mid] > target)
+        else if (target < arr[mid])
             right = mid - 1;
+
+        // has to be in the else, otherwise, it will be stuck in the loop forever if item is not found
+        // We stop when left is greater than right
+        else 
+            left = mid + 1;
     }
        
     return -1;
 }
 
+// Tail recursion
+// If we have to use a tail recursion, we can always use a loop since tail recursion uses the stack
 int BinarySearchRecursion(int[] myArr, int left, int right, int target)
 {
     if(left <= right)
@@ -51,11 +53,11 @@ int BinarySearchRecursion(int[] myArr, int left, int right, int target)
         if(myArr[mid] == target)
             return mid;
             
-        else if(target > myArr[mid])
-            return BinarySearchRecursion(myArr, mid + 1, right, target);
-            
         else if(target < myArr[mid])
-            return BinarySearchRecursion(myArr, left, mid - 1, target);
+            return BinarySearchRecursion(myArr, left, right - 1, target);
+            
+        else
+            return BinarySearchRecursion(myArr, left + 1, right, target);
     }
     
     return -1;

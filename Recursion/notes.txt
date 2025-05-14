@@ -1,3 +1,6 @@
 ﻿A function calling itself
 
+When a function calls itself (recursively), each call is added to the call stack.
+This stack keeps track of where each function should return after it finishes.
+
 An important thing about recursion is that there must be a base condition that will terminate it.

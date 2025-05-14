@@ -2,8 +2,12 @@
 
 WriteLine("Recursion!!");
 
-int n = 4;
-SubtractAndPrint(n);
+//int n = 4;
+//SubtractAndPrint(n);
+
+int[] myArr = {1,2,3,4,5};
+
+WriteLine($"Recursion sum is: {Sum(myArr, myArr.Length - 1)}");
 
 ReadLine();
 
@@ -14,4 +18,13 @@ void SubtractAndPrint(int x)
         WriteLine($"Value of n is {x}");
         SubtractAndPrint(x - 1);
     }
+}
+
+
+int Sum(int[]arr, int n)
+{
+    if(n < 0)
+        return 0;
+        
+    return Sum(arr, n - 1) + arr[n];
 }
