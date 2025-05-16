@@ -7,6 +7,10 @@ WriteLine("Recursion!!");
 
 int[] myArr = {1,2,3,4,5};
 
+for (int i = 0, j = 0; i < myArr.Length; i++, j++)
+{
+}
+
 WriteLine($"Recursion sum is: {Sum(myArr, myArr.Length - 1)}");
 
 ReadLine();

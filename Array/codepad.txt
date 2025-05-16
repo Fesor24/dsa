@@ -127,3 +127,137 @@ int Sum(int[]arr, int n)
 }
 
 Sum(myArr, myArr.Length - 1);
+
+10. Reverse and shift an array
+i. Reverse
+Method one: using a second array, then copying the first item to the second one
+This method takes time taken O(n)
+myArr = {3,4,5,2,10,99};
+myArr2 = new int[myArr.Length];
+
+for(int i = myArr.Length - 1, j = 0; i >= 0; i--, j++)
+    myArr2[j] = myArr[i];
+    
+A second for loop to copy items from myArr2 to myArr
+for(int i = 0; i < myArr2.Length; i++)
+    myArr[i] = myArr2[i]; 
+    
+Method Two: Swap the elements, for example, the first element with the last element
+We do not need a second array for this
+Time taken is O(n)
+
+myArr = {6,4,2,9,3,9};
+
+for(int i = 0, j = myArr.Length - 1; i<j; i++,j--)
+{
+    int temp = myArr[i];
+    myArr[i] = myArr[j];
+    myArr[j] = temp;
+}
+
+ii. Left shift/rotate
+Shifting every element to the left. The first item goes out and for the others, it moves to the left
+for(int i = 1; i < myArr.Length; i++)
+    myArr[i - 1] = myArr[i];
+    
+myArr[myArr.Length - 1] = 0;
+    
+While for rotation, the first item goes to the last.
+Similar to right shift
+for(int i = myArr.Length - 2; i >= 0; i--)
+    myArr[i + 1] = myArr[i];
+     
+Time taken for all is O(n)
+
+Sorted array
+1. Insertion in a sorted array
+myArr = {2,4,6,8,9,10}
+item = 5;
+
+Idea is we start from the last item, if item to be inserted is greater, we insert at the last
+Otherwise, we shift items to the right. This way we do not need to find the position by comparing all the elements
+
+Condition: Array with unique elements
+
+int lastItemPosition = myArr.Length - 1;
+while(item < myArr[lastItemPosition])
+{
+    myArr[lastItemPosition + 1] = myArr[lastItemPosition];
+    lastItemPosition--; 
+}
+// we add + 1 bcos after the loop, lastItemPosition is pointing to the last element that is less
+// than or equal to the item (where the shifting stopped)
+// The next index (lastItemPosition + 1) is the correct insertion point 
+myArr[lastItemPosition + 1] = item;
+
+NB: for loops are useful when you know how many times you are going to repeat
+
+2. Checking if the array is sorted or not
+bool sorted = true;
+
+for(int i = 0; i < myArr.Length - 1)
+{
+    if(myArr[i] > myArr[i + 1])
+        return false;
+}
+
+return true;
+
+3. An array with positive and negative numbers and we want to bring all negatives to the left and positives to the right
+Time taken is O(n)
+
+myArr = {-2,4,5,3,-1,-4,-6,9}
+
+int i = 0;
+int j = myArr.Length;
+
+while(i < j)
+{
+    while(myArr[i] < 0)
+        i++;
+        
+    while(myArr[j] >= 0)
+        j--;
+        
+    if(i < j)
+    {
+        int temp = myArr[i];
+        myArr[i] = myArr[j];
+        myArr[j] = temp;
+    }
+}
+
+4. Merging arrays
+Combining two sorted list into a single sorted array
+Merging can be done only on sorted arrays
+
+Time taken is Theta(m + n)
+Where m is the length of the first array and n is the second
+
+myArr = {1,4,5,6,7};
+myArr2 = {3,8,9,10,12};
+
+int i = 0, j =0, k = 0;
+
+merged = new int[myArr.Length + myArr2.Length];
+
+// We have to stop if the first array ends or the second
+while(i < myArr.Length && j < myArr2.Length)
+{
+    if(myArr[i] < myArr2[j])
+        merged[k++] = myArr[i++];
+    
+    else
+        merged[k++] = myArr[j++];
+}
+
+// Remaining part is to handle the left overs from the array
+// At least one will be remaining
+while(i < myArr.Length)
+    merged[k++] = myArr[i++];
+    
+while(j < myArr2.Length)
+    merged[j++] = myArr2[j++];
+
+
+Set Operations
