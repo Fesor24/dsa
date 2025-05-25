@@ -32,8 +32,12 @@ Removing an element from a specified index
 When we remove an item from an index, we do not leave it vacant(null)
 Otherwise, for each element we would have to check if an item is there or not
 So instead of keeping it blank, we would shift the other elements
-example, delete item an index 3
+
 myArr = {3,4,5,6,7}
+index----0,1,2,3,4
+
+delete item at index 3
+index = 3;
 
 for(int i = index; i < myArr.Length - 1; i++)
     myArr[i] = myArr[i + 1];
@@ -126,6 +130,7 @@ int Sum(int[]arr, int n)
     return Sum(arr, n - 1) + arr[n];
 }
 
+// Call function...
 Sum(myArr, myArr.Length - 1);
 
 10. Reverse and shift an array
@@ -261,3 +266,94 @@ while(j < myArr2.Length)
 
 
 Set Operations
+i. Union Operation
+Union first array and second array to third array
+How: Copy the items of the first array to the third array
+Now for each item in the second array, we check if it is in the third array
+if it is not there, we copy it
+
+myArr1 = {4,3,12,1,90};
+myArr2 = {5,9,8,2,29};
+
+myArr3 = new int[myArr1.Length + myArr2.Length];
+Time complexity is O(n2)
+
+In a case where the first array and second array are sorted,
+we do it the same way we did merging of array, only difference is that, if both are same, we copy only one
+and we move both i and j
+Time complexity is O(n)
+
+int[] myArr1 = {2,4,5,6};
+int[] myArr2 = {2,3,7,8};
+int[] myArr3 = new int[myArr1.Length + myArr2.Length];
+
+int i = 0, j = 0, k = 0;
+
+while(i < myArr1.Length && j < myArr2.Length)
+{
+    if(myArr1[i] == myArr2[j])
+    {
+        // we select only one and increment both
+        myArr3[k++] = myArr1[i++];
+        j++;
+    }
+    
+    else if(myArr1[i] < myArr2[j])
+    {
+        myArr3[k++] = myArr1[i++];
+    }
+    
+    else
+        myArr3[k++] = myArr2[j++];
+}
+
+while(i < myArr1.Length)
+    myArr3[k++] = myArr1[i++];
+    
+while(j < myArr2.Length)
+    myArr3[k++] = myArr2[j++];
+    
+Intersection and Difference are similar to Union with some changes
+Intersection - we take common elements of a and b and store in c
+i.e items that are both in a and b
+Take first item from a
+Check if it is in b
+if it is there, store it in c
+a = {4,5,6};
+b = {3,5,6}
+c = new int[Math.Min(a.Length, b.Length)];
+int k = 0;
+
+for(int i = 0; i < a.Length; i++)
+{
+    for(int j = 0; j < b.Length; j++)
+    {
+        if(a[i] == b[j])
+        {
+            bool added = false;
+            
+            for(int m = 0; m < k; m++)
+            {
+                if(k[m] == a[i])
+                {
+                    added = true;
+                    break;
+                }
+                
+            }
+            
+            if(!added)
+                c[k++] = a[i];
+        }
+        
+    }
+}
+
+Difference
+We want the elements in a which are not in b
+Opposite of intersection
+
+Find missing elements
+myArr = {1,2,3,4,5,7,8,9,10};
+
+for(int)
